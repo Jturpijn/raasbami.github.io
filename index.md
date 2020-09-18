@@ -49,9 +49,15 @@ De bois van Raasdorperweg, born and raised in Lijnden. Mario Kart legendes.
 
 # Total points per person
 <ul>
-{% for place in site.data.cups.races.places %}
-{% if place.first_place == "joshua" %}
-<li>{{place.first_place.points}}</li>
+{%assign total_joshua = 0 %}
+{% for race in site.data.season1 %}
+{% if race.first_place == "Joshua" %}
+{% total_joshua | plus race.first_place.points}
+{% if race.second_place == "Joshua" %}
+{% total_joshua | plus race.first_place.points}
+{% if race.third_place == "Joshua" %}
+{% total_joshua | plus race.first_place.points}
 {% endif %}
 {% endfor %}
+<li> {{ total_joshua }}
 </ul>
