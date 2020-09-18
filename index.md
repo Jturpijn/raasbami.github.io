@@ -13,13 +13,36 @@ Om verwarring en ruzie te voorkomen, hieronder de regels :
 # De spelers
 De bois van Raasdorperweg, born and raised in Lijnden. Mario Kart legendes.
 
-Naam | Leeftijd | Mario Kart karakter | Huidige voertuig
------------- | ------------- | ------------- | -------------
-Joshua S.H. Turpijn| 26| Mii ($Gucci$) | Mach Bike
-Roemer Nguni Bakker| 23| Mii (Nguni)) | Mach Bike
-Ruud Ronaldo Janse | 28| Mii (Ruurd) | Mach Bike
+<table>
+  {% for row in site.data.players %}
+    {% if forloop.first %}
+    <tr>
+      {% for pair in row %}
+        <th>{{ pair[0] }}</th>
+      {% endfor %}
+    </tr>
+    {% endif %}
+
+    {% tablerow pair in row %}
+      {{ pair[1] }}
+    {% endtablerow %}
+  {% endfor %}
+</table>
 <br>
 
 # Recent races season 1
-{% assign row = site.data.authors[0] %}
-{{ row | inspect }}
+<table>
+  {% for row in site.data.races %}
+    {% if forloop.first %}
+    <tr>
+      {% for pair in row %}
+        <th>{{ pair[0] }}</th>
+      {% endfor %}
+    </tr>
+    {% endif %}
+
+    {% tablerow pair in row %}
+      {{ pair[1] }}
+    {% endtablerow %}
+  {% endfor %}
+</table>
