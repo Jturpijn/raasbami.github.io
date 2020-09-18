@@ -11,7 +11,7 @@ Om verwarring en ruzie te voorkomen, hieronder de regels :
 ```
 
 # De spelers
-De bois van Raasdorperweg, born and raised in Lijnden. Mario Kart legendes.
+De boiis van Raasdorperweg, born and raised in Lijnden. Mario Kart legendes.
 
 <table>
   {% for row in site.data.players %}
@@ -49,7 +49,7 @@ De bois van Raasdorperweg, born and raised in Lijnden. Mario Kart legendes.
 
 # Total points per person
 <ul>
-{% for race in site.data.season1 %}
+{% for race in site.data.season1.races %}
 <li> {{ race.first_place }} </li>
 <li> {{ race.first_place.points }} </li>
 {% endif %}
