@@ -1,17 +1,17 @@
 -date: 16-09-2020
- amount: 16
+ amount: "16"
  -first_place: Joshua
-  points: 100
+  points: "100"
  -second_place: Roemer
-  points: 80
+  points: "80"
  -third_place: Ruud
-  points: 60
+  points: "60"
 
 -date: 18-09-2020
- amount: 32
+ amount: "32"
  -first_place: Ruud
-  points: 200
+  points: "200"
  -second_place: Joshua
-  points: 180
+  points: "180"
  -third_place: Roemer
-  points: 160
+  points: "160"
