@@ -1,37 +1,25 @@
-## Welcome to GitHub Pages
+# Welcome nerds.
 
-You can use the [editor on GitHub](https://github.com/Jturpijn/raasbami.github.io/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+Deze website houdt de officiele score bij van het Raasbami Mario Kart Wii toernooi.  
+Om verwarring en ruzie te voorkomen, hieronder de regels :
+```
+- We spelen op de wii.  
+- Alleen cups waar alle 3 de leden van deelnemen zijn legitiem.
+- De cups kunnen enkel bestaan uit 16 of 32, de rest wordt niet opgenomen.
+- Voor het huidige seizoen kan niet van controller worden gewisseld.
+- De races worden hier bijgehouden voor volledige transparantie.
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+# De spelers
+De bois van Raasdorperweg, born and raised in Lijnden. Mario Kart legendes.
 
-### Jekyll Themes
+Naam | Leeftijd | Mario Kart karakter | Huidige voertuig
+------------ | ------------- | ------------- | -------------
+Joshua S.H. Turpijn| 26| Mii ($Gucci$) | Mach Bike
+Roemer Nguni Bakker| 23| Mii (Nguni)) | Mach Bike
+Ruud Ronaldo Janse | 28| Mii (Ruurd) | Mach Bike
+<br>
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Jturpijn/raasbami.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+# Recent races season 1
+{% assign row = site.data.authors[0] %}
+{{ row | inspect }}
