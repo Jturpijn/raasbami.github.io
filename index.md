@@ -19,19 +19,13 @@ De boiis van Raasdorperweg, born and raised in Lijnden. Mario Kart legendes.
 
 <table>
   {% for row in site. data. players %}
-
     {% if forloop.first %}
-    <tr>
-      {% for pair in row %}
-        <th>{{ pair[0] }}</th>
-      {% endfor %}
-    </tr>
+      <tr>
+        {% for pair in row %}
+          <th>{{ pair[0] }}</th>
+        {% endfor %}
+      </tr>
     {% endif %}
-
-    {% tablerow pair in row %}
-      {{ pair[1] }}
-    {% endtablerow %}
-
   {% endfor %}
 </table>
 <br>
@@ -39,29 +33,21 @@ De boiis van Raasdorperweg, born and raised in Lijnden. Mario Kart legendes.
 # Recent races season 1
 
 <table>
-  <tr>
-    <th> First table </th>
-    <th> Second table </th>
-  </tr>
-  <tr>
-    <table>
-      {% for row in site. data. races %}
-        {% if forloop.first %}
-          <tr>
-            {% for pair in row %}
-              <th>{{ pair[0] }}</th>
-          </tr>
-        {% endfor %}
-      {% endif %}
-
-      {% tablerow pair in row %}
-        {{ pair[1] }}
-        {% endtablerow %}
+  {% for row in site.data.races %}
+    {% if forloop.first %}
+      <tr>
+        <th rowspan="2"> foto </th>
+      </tr>
+      <tr>
+        <td> row.Date </td>
+        <td> row.Races </td>
+      </tr>
+      <tr>
+          <td></td>
+          <td>row.Placed </td>
+          <td>row.Points </td>
+        </tr>
       {% endfor %}
-    </table>
-  </tr>
-  <tr>
-    <table>
-    </table>
-  </tr>
+    </tr>
+  {% endif %}
 </table>
