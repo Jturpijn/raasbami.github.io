@@ -34,7 +34,7 @@ De boiis van Raasdorperweg, born and raised in Lijnden. Mario Kart legendes.
 
 <table>
       <tr>
-        <th> Result: </th>
+        <th> Result </th>
         <th colspan="2"> Information </th>
       </tr>
       <tr>
@@ -43,6 +43,7 @@ De boiis van Raasdorperweg, born and raised in Lijnden. Mario Kart legendes.
       <tr>
         <td> row.Date </td>
         <td> row.Races </td>
+        </tr>
   {% for row in site.data.races %}
     {% if forloop.first %}
         <tr>
