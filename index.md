@@ -1,6 +1,11 @@
+---
+layout: default
+title: RaasBami MKC 2020
+---
+
 # Welcome racers
 
-Deze website houdt de officiele score bij van het Raasbami Mario Kart Wii toernooi. 
+Deze website houdt de officiele score bij van het Raasbami Mario Kart Championship 2020.
 Om verwarring en ruzie te voorkomen, hieronder de regels :
 
 ``` 
@@ -41,15 +46,15 @@ De boiis van Raasdorperweg, born and raised in Lijnden. Mario Kart legendes.
         <td rowspan="4"> foto </td>
       </tr>
       <tr>
-        <td> row.Date </td>
-        <td> row.Races </td>
-        </tr>
+        <td> site.data.races.Date </td>
+        <td> site.data.races.Races </td>
+      </tr>
   {% for row in site.data.races %}
     {% if forloop.first %}
         <tr>
           <td>row.Placed </td>
           <td>row.Points </td>
-      {% endfor %}
       </tr>
-  {% endif %}
+    {% endif %}
+  {% endfor %}
 </table>
