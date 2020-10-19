@@ -1,12 +1,9 @@
 ---
 layout: default
-title: RaasBami MKC 2020
+title: Homepage
 ---
 
-# Welcome racers
-
-Deze website houdt de officiele score bij van het Raasbami Mario Kart Championship 2020.
-Om verwarring en ruzie te voorkomen, hieronder de regels :
+# Da Rules
 
 ``` 
 
@@ -23,38 +20,39 @@ Om verwarring en ruzie te voorkomen, hieronder de regels :
 De boiis van Raasdorperweg, born and raised in Lijnden. Mario Kart legendes. 
 
 <table>
-  {% for row in site. data. players %}
+  {% for player in site.data.players %}
     {% if forloop.first %}
       <tr>
-        {% for pair in row %}
-          <th>{{ pair[0] }}</th>
+        {% for pair in player %}
+          <th>{{ pair[0]}}</th>
         {% endfor %}
       </tr>
     {% endif %}
+    <tr>
+      {% for pair in player %}
+        <td>{{ pair[1]}}</td>
+      {% endfor %}
+    </tr>
   {% endfor %}
 </table>
-<br>
 
-# Recent races season 1
-
+# Race History
 <table>
       <tr>
         <th> Result </th>
-        <th colspan="2"> Information </th>
+        <th> Date </th>
+        <th> Races </th>
+        <th colspan="2"> 1st place </th>
+        <th colspan="2"> 2nd place </th>
+        <th colspan="2"> 3rd place </th>
       </tr>
+      
+  {% for race in site.data.races %}
       <tr>
-        <td rowspan="4"> foto </td>
-      </tr>
-      <tr>
-        <td> site.data.races.Date </td>
-        <td> site.data.races.Races </td>
-      </tr>
-  {% for row in site.data.races %}
-    {% if forloop.first %}
-        <tr>
-          <td>row.Placed </td>
-          <td>row.Points </td>
-      </tr>
-    {% endif %}
+        <td> ![image](./images/1.jpg) </td> 
+        {% for pair in race %}
+            <td>{{ pair[1]}}</td>
+        {% endfor %}
+        </tr>
   {% endfor %}
 </table>

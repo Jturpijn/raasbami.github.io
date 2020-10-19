@@ -64,9 +64,10 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
-  jekyll (~> 3.5)
+  jekyll (~> 3.9)
   jekyll-theme-slate (~> 0.1.1)
-  kramdown-parser-gfm (~> 1.1)
+  kramdown-parser-gfm (~> 1.1.0)
+  liquid (~> 4.0.3)
 
 BUNDLED WITH
    2.1.4
