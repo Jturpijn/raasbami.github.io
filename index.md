@@ -44,13 +44,15 @@ De boiis van Raasdorperweg, born and raised in Lijnden. Mario Kart legendes.
       <tr>
         <td> <img src="{{ site.baseurl }}{{ image.path }}" colspan="3" alt="image" width="160" height="90" /> </td> 
           {% for race in site.data.races %}
-          {% assign currRace = site.data.races | where: "ID", image.basename | first %} 
-              <td> {{ race.ID }} </td>
-              <td> {{ race.Date }} </td>
-              <td> {{ race.first }} </td>
-              <td> {{ race.second }} </td>
-              <td> {{ race.third }} </td>
+          {% assign currRace = site.data.races | where: "ID", image.basename %} 
           {% endfor %}
+        {{race | inspect}}
+        {{currRace | inspect}}
+              <td> {{ race.Date }} </td>
+              <td> {{ currRace.Date }} </td>
+              <td> {{ race.DATE }} </td>
+              <td> {{ currRace.DATE }} </td>
+              <td> {{ race.third }} </td>
       </tr>
       {% endif %}
   {% endfor %}
