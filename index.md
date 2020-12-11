@@ -37,7 +37,7 @@ De boiis van Raasdorperweg, born and raised in Lijnden. Mario Kart legendes.
         <th> Races </th>
         <th colspan="2"> 1st place </th>
         <th colspan="2"> 2nd place </th>
-        <th colspan="2"> 3rd place </th>
+        <th colspan="2"> 3rd place </th>  
       </tr>
   {% for image in site.static_files %}
       {% if image.path contains 'images/result' %}
@@ -46,14 +46,22 @@ De boiis van Raasdorperweg, born and raised in Lijnden. Mario Kart legendes.
           {% for race in site.data.races %}
           {% assign currRace = site.data.races | where: "ID", image.basename %} 
           {% endfor %}
-          {{currRace | inspect}}
-              <td> {{ currRace[0].ID }} </td>
+          {{currRace | inspect}}  
               <td> {{ currRace.Date }} </td>
               <td> {{ currRace[0]["Races"] }} </td>
               <td> {{ currRace["First"] }} </td>
-              <td> {{ currRace["Second"] }} </td>
-              <td> {{ currRace["Third"] }} </td>
+                <td> {{ currRace["Second"] }} </td>
+                <td> {{ currRace["Third"] }} </td>
       </tr>
       {% endif %}
   {% endfor %}
 </table>
+
+{% assign races  = site.data.races | group_by: "ID"%}
+<ul>
+{% for g in groups %}
+{% assign race = races%}
+<!-- <li> <img src="{{ site.baseurl }}{{ image.path }}" colspan="3" alt="image" width="160" height="90" /> </li> -->
+<li>date : {{ race.date }} {{ leads.amount }} laps</li>
+{% endfor %}
+</ul>
