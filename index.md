@@ -2,11 +2,8 @@
 layout: default
 title: Homepage
 ---
-
 # Da Rules
-
 ``` 
-
 * We spelen op de wii.  
 * Alleen cups waar alle 3 de leden van deelnemen zijn legitiem.
 * De cups kunnen enkel bestaan uit 16 of 32, de rest wordt niet opgenomen.
@@ -14,11 +11,8 @@ title: Homepage
 * De races worden hier bijgehouden voor volledige transparantie.
 
 ```
-
 # De spelers
-
 De boiis van Raasdorperweg, born and raised in Lijnden. Mario Kart legendes. 
-
 <table>
   {% for player in site.data.players %}
     {% if forloop.first %}
@@ -35,7 +29,6 @@ De boiis van Raasdorperweg, born and raised in Lijnden. Mario Kart legendes.
     </tr>
   {% endfor %}
 </table>
-
 # Race History
 <table>
       <tr>
@@ -46,13 +39,19 @@ De boiis van Raasdorperweg, born and raised in Lijnden. Mario Kart legendes.
         <th colspan="2"> 2nd place </th>
         <th colspan="2"> 3rd place </th>
       </tr>
-      
-  {% for race in site.data.races %}
+  {% for image in site.static_files %}
+      {% if image.path contains 'images/result' %}
       <tr>
-        <td> ![image](./images/1.jpg) </td> 
-        {% for pair in race %}
-            <td>{{ pair[1]}}</td>
-        {% endfor %}
-        </tr>
+        <td> <img src="{{ site.baseurl }}{{ image.path }}" colspan="3" alt="image" width="160" height="90" /> </td> 
+          {% for race in site.data.races %}
+          {% assign currRace = site.data.races | where: "ID", image.basename | first %} 
+          {% endfor %}
+              <td> {{ currRace }} </td>
+              <td> {{ currRace.Races}} </td>
+              <td> {{ currRace.ID }} </td>
+              <td> {{ currRace.second }} </td>
+              <td> {{ currRace.third }} </td>
+      </tr>
+      {% endif %}
   {% endfor %}
 </table>

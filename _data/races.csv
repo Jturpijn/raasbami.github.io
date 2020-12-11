@@ -1,3 +1,5 @@
-Date, #Races, 1st , 1stpoints, 2nd, 2ndpoints, 3rd, 3rdpoints 
-16-09-2020, 16, Ruud, 186, Roemer, 159, Joshua, 156
-14-10-2020, 32, Joshua, 392, Roemer, 360, Ruud, 324
+ID, Date, Races, first , firstP, second, secondP, third, thirdP 
+1, 16-09-2020, 16, Ruud, 186, Roemer, 159, Joshua, 156
+2, 14-10-2020, 32, Joshua, 392, Roemer, 360, Ruud, 324
+3, 21-10-2020, 32, Joshua, 369, Ruud, 358, Roemer, 320
+4, 28-10-2020, 32, Nguni, 383, Ruud, 366, Joshua, 336
