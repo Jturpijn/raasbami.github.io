@@ -11,6 +11,28 @@ title: Homepage
 * De races worden hier bijgehouden voor volledige transparantie.
 
 ```
+<!-- =================
+
+Table styling
+================= -->
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
 # De spelers
 De boiis van Raasdorperweg, born and raised in Lijnden. Mario Kart legendes. 
 <table>
@@ -29,30 +51,39 @@ De boiis van Raasdorperweg, born and raised in Lijnden. Mario Kart legendes.
     </tr>
   {% endfor %}
 </table>
+
 # Race History
 <table>
       <tr>
         <th> Result </th>
         <th> Date </th>
-        <th> Races </th>
-        <th colspan="2"> 1st place </th>
-        <th colspan="2"> 2nd place </th>
-        <th colspan="2"> 3rd place </th>
+        <th> Ranking </th>
+        <th> Points </th>
       </tr>
-  {% for image in site.static_files %}
+  {% for image in site.static_files reversed %}
       {% if image.path contains 'images/result' %}
       <tr>
-        <td rowspan="2"> <img src="{{ site.baseurl }}{{ image.path }}" colspan="3" alt="image" width="160" height="90" /> </td> 
+        <td rowspan="3"  style="vertical-align:top"><img src="{{ image.path }}" alt="image" width="480" height="270" /> </td> 
           {% for race in site.data.races %}
-          {% assign currRace = site.data.races | where: "ID", image.basename %} 
-          {% endfor %}
-          {{currRace | inspect}}
-              <td rowspan="3"> {{ currRace[0].date }} </td>
-              <td rowspan="3"> {{ currRace[0].amount }} </td>
+          {% assign currRace = site.data.races | where: "id", image.basename  %} 
+          {% endfor %}  
+              <td> {{ currRace[0].date }} </td>
               <td> {{ currRace[0].first }} </td>
+              <td> {{ currRace[0].first_points }} </td>
+            </tr>
+            <tr>
+              <th>  # races </th>
               <td> {{ currRace[0].second }} </td>
+              <td> {{ currRace[0].second_points }} </td>
+            </tr>
+            <tr>
+              <td> {{ currRace[0].amount }} </td>
               <td> {{ currRace[0].third }} </td>
-      </tr>
+              <td> {{ currRace[0].third_points }} </td>
+            </tr>
+            <tr > <!-- Table spacer --> 
+                <td colspan="4"></td> 
+            </tr>
       {% endif %}
   {% endfor %}
 </table>
